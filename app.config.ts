@@ -4,4 +4,6 @@ export const API = {
     LOGIN: `${ BASE_URL }/token/`,
     REFRESH_TOKEN: `${ BASE_URL }/token/refresh/`,
     PRODUCTS: `${ BASE_URL }/`,
+    CART: `${ BASE_URL }/cart/`,
+    COLOR: `${ BASE_URL }/color/`,
 }

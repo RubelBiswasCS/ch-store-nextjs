@@ -1,16 +1,16 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi } from '@reduxjs/toolkit/query/react'
 import { API } from '@/app.config'
 
 import axiosBaseQuery from './axiosBaseQuery'
 
-export const productApi = createApi({
-  reducerPath: 'productApi',
+export const cartApi = createApi({
+  reducerPath: 'cartApi',
   baseQuery: axiosBaseQuery({ baseUrl: '' }),
   endpoints: (builder) => ({
-    getProducts: builder.query<any, any>({
+    getCartItems: builder.query<any, any>({
       query: () => {
         return ({
-            url: `${ API.PRODUCTS }`,
+            url: `${ API.CART }`,
             method: 'GET',
             headers: {
               Authorization: `JWT ${ localStorage.getItem('accessToken') }`
@@ -22,4 +22,4 @@ export const productApi = createApi({
 })
 
 
-export const { useGetProductsQuery } = productApi
+export const { useGetCartItemsQuery } = cartApi
