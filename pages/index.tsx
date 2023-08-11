@@ -4,7 +4,7 @@ import { useGetAllColorsQuery } from "@/redux/services/color"
 import Link from "next/link"
 
 export default function Home() {
-  const { data, error, isLoading }: any = useGetProductsQuery('')
+  const { data, error, isLoading }: any = useGetProductsQuery(null)
   const { data: cartData , error: cartError, isLoading: isCartLoading }: any = useGetCartItemsQuery('', { skip: isLoading || error?.status === 401 })
   const { data: colors, error: colorError, isLoading: isColorLoading }: any = useGetAllColorsQuery('', { skip: isLoading || error?.status === 401 })
 
